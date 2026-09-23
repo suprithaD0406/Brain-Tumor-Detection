@@ -1,12 +1,4 @@
-Great. 👍 Let's update the README now.
-
-Open:
-
-```text
-README.md
-```
-
-Delete everything in it and paste the complete version below:
+Yes. Copy-paste this **entire README** and replace your current one:
 
 ````markdown
 # 🧠 Brain Tumor Detection
@@ -18,7 +10,7 @@ A deep learning-based brain tumor classification system that analyzes MRI images
 - **No Tumor**
 - **Pituitary**
 
-The project includes exploratory data analysis, model training, evaluation, confusion matrix analysis, and image-level prediction.
+The project includes exploratory data analysis, image preprocessing, model training, evaluation, confusion matrix analysis, and image-level prediction.
 
 ---
 
@@ -144,7 +136,7 @@ Predicted Tumor Class + Confidence
 
 ## 🔍 Sample Prediction
 
-The trained model can predict the tumor class and provide the probability of each class.
+The trained model predicts the tumor class and provides the probability of each class.
 
 Example:
 
@@ -159,6 +151,8 @@ Meningioma   : 31.35%
 No Tumor     : 0.03%
 Pituitary    : 0.24%
 ```
+
+This example also demonstrates a model misclassification, which is useful for error analysis.
 
 ---
 
@@ -193,6 +187,7 @@ Brain-Tumor-Detection/
 │   ├── confusion_matrix.png
 │   └── loss_plot.png
 │
+├── class_report.txt
 ├── main.py
 ├── pyproject.toml
 ├── uv.lock
@@ -295,6 +290,8 @@ The error analysis records:
 
 This helps identify difficult examples and understand model errors.
 
+> The misclassified test images are used for analysis only and are not used for training.
+
 ---
 
 ## 🚧 Future Improvements
@@ -312,14 +309,11 @@ This helps identify difficult examples and understand model errors.
 
 **Supritha D**
 
-GitHub:
-[https://github.com/suprithaD0406](https://github.com/suprithaD0406)
+GitHub: [https://github.com/suprithaD0406](https://github.com/suprithaD0406)
 
 ````
 
-### After saving README
-
-Run:
+After pasting and saving, run:
 
 ```powershell
 git add README.md
@@ -327,4 +321,4 @@ git commit -m "Update project README"
 git push
 ````
 
-Then refresh your GitHub repository.
+Then refresh GitHub.
