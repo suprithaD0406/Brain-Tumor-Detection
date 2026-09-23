@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brain Tumor Detection</title>
+
+</head>
+
+<body>
+
+    <h1>Brain Tumor Detection</h1>
+
+    <br>
+
+    <input
+        type="file"
+        id="imageInput"
+    >
+
+    <br><br>
+
+    <button onclick="predict()">
+
+        Predict
+
+    </button>
+
+    <br><br>
+
+    <h2 id="prediction"></h2>
+
+    <h3 id="confidence"></h3>
+
+    <pre id="probabilities"></pre>
+
+<script>
+
+async function predict(){
+
+    const file=document.getElementById("imageInput").files[0];
+
+    if(!file){
+
+        alert("Choose an image");
+
+        return;
+
+    }
+
+    const formData=new FormData();
+
+    formData.append("file",file);
+
+    const response=await fetch(
+
+        "http://127.0.0.1:8000/predict",
+
+        {
+
+            method:"POST",
+
+            body:formData
+
+        }
+
+    );
+
+    const result=await response.json();
+
+    document.getElementById("prediction").innerHTML=
+    "Prediction : "+result.prediction;
+
+    document.getElementById("confidence").innerHTML=
+    "Confidence : "+result.confidence+" %";
+
+    let text="";
+
+    for(const key in result.probabilities){
+
+        text+=key+" : "+(result.probabilities[key]*100).toFixed(2)+" %\n";
+
+    }
+
+    document.getElementById("probabilities").innerHTML=text;
+
+}
+
+</script>
+
+</body>
+
+</html>

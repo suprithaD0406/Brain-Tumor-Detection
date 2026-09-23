@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info/
+
+# Virtual environment
+.venv/
+
+# Dataset
+dataset/
+
+# Trained models
+saved_models/
+
+# Generated outputs
+outputs/
+
+# VS Code
+.vscode/
